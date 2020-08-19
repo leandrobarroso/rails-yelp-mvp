@@ -1,2 +1,27 @@
-<h1>Restaurants#show</h1>
-<p>Find me in app/views/restaurants/show.html.erb</p>
+<div class="container">
+
+  <div class="row justify-content-center">
+    <div class="col-6 m-1 p-1 border rounded shadow bg-white d-flex flex-column">
+      <img src=<%= "http://loremflickr.com/400/400/#{@restaurant.category}restaurant" %> alt="" width="400" height="400">
+      <div class="flex-grow-1 m-1">
+        <h1><%= @restaurant.name %></h1>
+        <p><%= @restaurant.category %></p>
+        <p>Address: <%= @restaurant.address %></p>
+        <p>REVIEWS</p>
+      </div>
+      <div class="m-1 d-flex align-items-end justify-content-between">
+          <%= link_to restaurant_path(@restaurant), class: 'btn btn-success btn-lg' do %>
+            <i class="fas fa-home"></i>
+          <% end %>
+          <div>
+          <%= link_to restaurant_path(@restaurant), class: 'ml-3 btn btn-primary btn-lg' do %>
+            <i class="fas fa-edit"></i>
+          <% end %>
+          <%= link_to restaurant_path(@restaurant), method: :delete, data: { confirm: 'Are you sure?' }, class: 'ml-3 btn btn-danger btn-lg' do %>
+            <i class="fas fa-trash"></i>
+          <% end %>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
