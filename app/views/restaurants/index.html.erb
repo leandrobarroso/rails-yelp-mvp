@@ -2,14 +2,14 @@
 <div class="container d-flex flex-column">
   <div class="d-flex justify-content-around">
     <h1 class="m-2 p-2 text-center">Restaurants</h1>
-    <%= link_to restaurants_path, class: 'ml-3 btn btn-success btn-sm' do %>
+    <%= link_to new_restaurant_path, class: 'ml-3 btn btn-success btn-sm' do %>
       <i class="fas fa-plus-circle"></i>
     <% end %>
   </div>
   <div class="row justify-content-center">
   <% @restaurants.each do |restaurant| %>
-    <div class="col-3 m-1 p-1 border rounded d-flex flex-column">
-      <img src=<%= "http://loremflickr.com/280/280/#{restaurant.category}restaurant" %> alt="" width="280" height="280">
+    <div class="col-3 m-1 p-1 border rounded shadow-sm bg-white d-flex flex-column">
+      <img src=<%= "http://loremflickr.com/280/280/#{restaurant.category}restaurant" %> width="280" height="280">
       <div class="flex-grow-1 m-1">
         <h2><%= restaurant.name %></h2>
         <p><%= restaurant.category %></p>
@@ -18,7 +18,7 @@
           <%= link_to restaurant_path(restaurant), class: 'ml-3 btn btn-success btn-sm' do %>
             <i class="fas fa-info-circle"></i>
           <% end %>
-          <%= link_to restaurant_path(restaurant), class: 'ml-3 btn btn-primary btn-sm' do %>
+          <%= link_to edit_restaurant_path(restaurant), class: 'ml-3 btn btn-primary btn-sm' do %>
             <i class="fas fa-edit"></i>
           <% end %>
           <%= link_to restaurant_path(restaurant), method: :delete, data: { confirm: 'Are you sure?' }, class: 'ml-3 btn btn-danger btn-sm' do %>

@@ -10,11 +10,11 @@
         <p>REVIEWS</p>
       </div>
       <div class="m-1 d-flex align-items-end justify-content-between">
-          <%= link_to restaurant_path(@restaurant), class: 'btn btn-success btn-lg' do %>
+          <%= link_to restaurants_path, class: 'btn btn-success btn-lg' do %>
             <i class="fas fa-home"></i>
           <% end %>
           <div>
-          <%= link_to restaurant_path(@restaurant), class: 'ml-3 btn btn-primary btn-lg' do %>
+          <%= link_to edit_restaurant_path(@restaurant), class: 'ml-3 btn btn-primary btn-lg' do %>
             <i class="fas fa-edit"></i>
           <% end %>
           <%= link_to restaurant_path(@restaurant), method: :delete, data: { confirm: 'Are you sure?' }, class: 'ml-3 btn btn-danger btn-lg' do %>
